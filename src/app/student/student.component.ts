@@ -11,7 +11,7 @@ export class StudentComponent implements OnInit {
   private messageService:MessageService;
 
   @Input("pmessage")
-  public pmessage:String="hello";
+  public message:String="hello";
 
   @Output()
   public updateMessage = new EventEmitter<String>();
@@ -23,6 +23,10 @@ export class StudentComponent implements OnInit {
     this.updateMessage.emit(value);
   }
 
+  public processMessage(msg):void{
+
+    this.message = msg;
+  }
  //public constructor(messageService:MessageService){
  // this.messageService=messageService;
  
