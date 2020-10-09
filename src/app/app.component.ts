@@ -14,9 +14,15 @@ export class AppComponent {
  welcome = "Nepal is a country";
  public message:string="";
 
+ public btmessage="Coming Soon!";
+
  //@Autowired 
 
  private messageService:MessageService;
+
+ public changeMessage(msg): void{
+   this.btmessage=msg;
+ }
 
  public constructor(messageService:MessageService){
   this.messageService=messageService;
