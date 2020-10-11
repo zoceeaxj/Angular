@@ -3,7 +3,7 @@ import { StudentComponent } from '../student/student.component';
 import { MessageService } from '../services/message.service';
 import { Router } from '@angular/router';
 import { Signup } from '../Models/signup.model';
-import { sign } from 'crypto';
+//import { sign } from 'crypto';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -33,9 +33,10 @@ export class SignupComponent implements OnInit {
 
   public csignup(){
     console.log(this.signup);
-    let result = this.authService.addUser(this.signup);
-    console.log(result);
-    this.router.navigate(['/auth']); 
+    this.authService.addUser(this.signup).subscribe(data=>{
+      console.log(data);
+      this.router.navigate(['/auth']);
+    });    
 
   }
 }

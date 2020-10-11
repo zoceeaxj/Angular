@@ -17,4 +17,27 @@
   <a routerLink = "/signup"><button type="button" class="btn btn-info">Sign Up</button></a> 
   &nbsp;
   <a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{btmessage}}</button></a>
-  
+  <hr/>
+<p>Pending Payee</p>            
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>PayeeAccountNo</th>
+      <th>PayeeName</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let payees of payee">
+      <td>{{payees.payeeAccountNo}}</td>
+      <td>{{payees.payeeName}}</td>
+      
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+   
+    </tr>
+  </tbody>
+</table> 

@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Signup } from '../Models/signup.model';
+import { AuthService } from '../services/auth.service';
 import { MessageService } from '../services/message.service';
+import { SignupComponent } from '../signup/signup.component';
 import { StudentComponent } from '../student/student.component';
 
 @Component({
@@ -23,6 +26,8 @@ export class SigninComponent implements OnInit {
  
   //@Autowired 
   private messageService:MessageService;
+
+  public payee:Signup[]=[];
  
 
   public changeMessage(msg): void{
@@ -30,7 +35,7 @@ export class SigninComponent implements OnInit {
     this.studentChild.processMessage("This is from parent");
   }
  
-  public constructor(messageService:MessageService){
+  public constructor(messageService:MessageService, private authService:AuthService){
    this.messageService=messageService;
    this.welcome = "This is Constructor";
  
@@ -38,6 +43,9 @@ export class SigninComponent implements OnInit {
  
   public ngOnInit(): void{
     this.welcome = "This is USA - reinitializing"; //reinitializing it
+    this.authService.findCustomers().subscribe(payee=>{
+      this.payee=payee;
+    });
   }
  
   public authUser(username, password){

@@ -18,8 +18,14 @@ export class AuthService {
     //Content-Type = "application/json"
     //Accept = "application/json"
     //{"code":1234, "message":"data is uploded successfully"} example of JSON you will receive
-    
-    return this.http.post<AppResponse>("http://local....", something); //i will get apprespone object
+    console.log("calling rest api");
+    console.log(signUp);
+    return this.http.post<AppResponse>("http://localhost:8443/v3/customer/addPayee", signUp); //i will get apprespone object
 
+  }
+
+  //list of customers
+  public findCustomers():Observable<Signup[]>{
+    return this.http.get<Signup[]>("http://localhost:8443/v3/customer/addPayee");
   }
 }

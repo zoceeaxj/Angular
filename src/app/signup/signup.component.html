@@ -1,26 +1,61 @@
-<h3>User Sign Up Page</h3>
-<span  id="emessage"  style="color:blue;font-size: 16px;font-weight: bold;">
-{{message}}
-</span>
-    <br/>
-     
-         <label for="username">Username</label>
-         <input [(ngModel)] = "signup.username"  type="text" name="username" class="form-control">
-           <br/>
-            <label>Password</label>
-         <input [(ngModel)] = "signup.password" type="password" name="password" class="form-control">
-          <br/>
-          <label>Email</label>
-       <input [(ngModel)] = "signup.email" name="email" class="form-control">
-      
-        <br/>
-        <label>Mobile</label>
-     <input [(ngModel)] = "signup.mobile" type="text" name="mobile" class="form-control">
-      <br/>
+&nbsp;
+<h3>Add Payee</h3>
+&nbsp;
+<table class="table table-bordered" style="width: 100%;">
+   <tr>
+      <td>
+         <div>
+            <label for="payeeName">Payee Account name:</label> <br />
+            <input [(ngModel)] = "signup.payeeName"  type="text" name="payeeName" class="form-control">	
+         </div>
+      </td>
+      <td>
+         <div>
+            <label for="payeeNickName">Nickname:</label> <br /> 
+            <input [(ngModel)] = "signup.payeeNickName"  type="text" name="payeeNickName" class="form-control">
+
+         </div>
+
+      </td>
+   </tr>
 
 
+   <tr>
+      <td>
+
+         <div>
+            <label for="payeeAccountNo">Account Number:</label> <br /> 
+            <input [(ngModel)] = "signup.payeeAccountNo"  type="text" name="payeeAccountNo" class="form-control">
+         </div>
+      </td>
+      <td>
+
+         <div>
+            <label for="accNumberConfirm">Confirm Account number:</label> <br />
+            <input [(ngModel)] = "signup.accNumberConfirm"  type="text" name="accNumberConfirm" class="form-control">
+         </div>
+
+      </td>
+   </tr>
+
+
+   <tr>
+      <td>
+
+         <div>
+            <label for="remarks">Remarks:</label> <br /> 
+            <input [(ngModel)] = "signup.remarks"  type="text" name="remarks" class="form-control">
+         </div>
+      </td>
+      <td>
+       &nbsp;
+      </td>
+   </tr>
+
+</table>
+&nbsp;
 <button type="button" class="btn btn-primary" (click)="csignup();">Sign Up</button>
 &nbsp;
 <a routerLink="/signup"><button type="button" class="btn btn-info">Sign In</button></a>
 &nbsp;
-<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{signup.username}}</button></a>
+<a href="forgotPassword.jsp"><button type="button" class="btn btn-primary">{{signup.payeeName}}</button></a>
